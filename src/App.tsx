@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+//authored by Tom Odem
 import './App.css';
 
 import {withAuthenticator, useAuthenticator, Button} from "@aws-amplify/ui-react";
 import {StorageManager} from "@aws-amplify/ui-react-storage";
 import "@aws-amplify/ui-react/styles.css";
-//import {Storage} from "aws-amplify"
 
 function App() {
   const {signOut} = useAuthenticator((context)=>[context.signOut])
