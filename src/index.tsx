@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {Amplify} from "aws-amplify"
+import aws_exports from "./aws-exports"
+Amplify.configure(aws_exports)
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

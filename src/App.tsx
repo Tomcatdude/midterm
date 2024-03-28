@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 
+import {withAuthenticator, useAuthenticator, Button} from "@aws-amplify/ui-react";
+import { remove } from 'aws-amplify/storage';
+import {StorageManager} from "@aws-amplify/ui-react-storage";
+import "@aws-amplify/ui-react/styles.css";
+//import {Storage} from "aws-amplify"
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const {signOut} = useAuthenticator((context)=>[context.signOut])
+  return <>
+  <StorageManager
+  accessLevel="private"
+  acceptedFileTypes={['image/*']}
+  maxFileCount={1}
+  />
+  <Button onClick={signOut}>Sign Out</Button>
+  </>
 }
 
-export default App;
+export default withAuthenticator(App);

@@ -1,0 +1,16 @@
+{
+  "resourceName": "s3midtermstorage6840574c",
+  "bucketName": "midterm-storage-6840574c",
+  "policyUUID": "c02052a8",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
